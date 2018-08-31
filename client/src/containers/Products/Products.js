@@ -16,15 +16,27 @@ class Products extends Component {
           name: "Frogs Leap Chard",
           price: 100,
           category: "White Wine"
+        },
+        {
+          name: "Super Tuscan",
+          price: 20,
+          category: "Red Wine"
+        },
+        {
+          name: "Wolffer",
+          price: 15,
+          category: "Rose Wine"
         }
       ]
     }
   }
 
   listOfProducts = () => {
-    this.state.products.map( (product) => {
-      <li><Product /></li>
+    debugger;
+    const list = this.state.products.map( (product) => {
+      return <li><Product product={product}/></li>
     })
+    return list
   }
 
   render(){
@@ -32,7 +44,7 @@ class Products extends Component {
       <div>
         <h5>Product List</h5>
         <ul>
-          {this.listOfProducts}
+          {this.listOfProducts()}
         </ul>
       </div>
     )
